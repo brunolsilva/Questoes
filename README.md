@@ -23,10 +23,10 @@ Sobre as possíveis soluções:
 A diferença do Stream para o ParallelStream é a forma de execução de cada um. Na API Stream, as operações são executadas de forma sequencial - usando o loop como exemplo, cada registro é acessado de forma sequencial, um por vez. Já na ParallelStream a execução é realizada de forma paralelizada, aproveitando melhor o número de CPU's disponível no ambiente em que o código estiver sendo executado, com uma API de uso simples, sem muito esforço para o desenvolvedor.
 
 Em relação a quando devemos utilizar cada um deles, os casos de uso recomendados do ParallelStream dependem de alguns fatores: 
-	- Número de CPU's do ambiente;
-	- Quantidade muito grande de itens que serão processados e o tipo de operação que está sendo executada (percorrer uma stream muito grande pode ter a vantagem do uso de mais cores, por exemplo);
-	- Uma operação que não depende da ordem da execução pode ser mais rápida;
-	- Tipo de aplicação utilizada. Por exemplo: uma aplicação com várias operações paralelas pode ter a performance prejudicada ao adicionar mais threads;
+- Número de CPU's do ambiente;
+- Quantidade muito grande de itens que serão processados e o tipo de operação que está sendo executada (percorrer uma stream muito grande pode ter a vantagem do uso de mais cores, por exemplo);
+- Uma operação que não depende da ordem da execução pode ser mais rápida;
+- Tipo de aplicação utilizada. Por exemplo: uma aplicação com várias operações paralelas pode ter a performance prejudicada ao adicionar mais threads;
 
 Se o caso de uso não tiver alguma das características acima, é recomendado utilizar a API Stream sequencial.
 
